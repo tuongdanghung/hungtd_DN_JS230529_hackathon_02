@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="style.css">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +9,80 @@
 </head>
 
 <body>
-
+    <table class="table-form">
+        <tr>
+            <td>
+                <h2>Nhap thong tin</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>email</label>
+                <input type="text" id="email">
+                <span id="errEmail">chưa nhập email</span><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>name</label>
+                <input type="text" id="name">
+                <span id="errName">chưa nhập tên</span><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Số điện thoai</label>
+                <input type="number" id="phone">
+                <span id="errPhone">chưa nhập số điện thoại</span><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Quê Quán</label><br>
+                <input type="text" id="hometown">
+                <span id="errHometown">chưa nhập quê quán</span><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Giới tính</label>
+                <div class="check-gender">
+                    <label class="label-gender">Nam</label>
+                    <input class="men-gender" name="genderS" type="radio" id="men" value="men" checked>
+                    <label class="label-gender">Nữ</label>
+                    <input name="genderS" type="radio" id="women" value="women">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="submit()" id="isCheckButton">add</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <input type="text" placeholder="search" id="searchValue" oninput="search()">
+    <br>
+    <table style="width:100%" border="1px solid black">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Giới tính</th>
+                <th>Hành động</th>
+                <th>
+                    <button onclick="handleSort()">Sắp xếp</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="album">
+        </tbody>
+    </table>
 </body>
+
+<script src="./main.js"></script>
 
 </html>
