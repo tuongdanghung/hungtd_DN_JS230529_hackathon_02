@@ -1,6 +1,7 @@
 const data = local();
 let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const regexPhoneNumber = /^(?:\+84|0)(?:\d{9,10})$/;
+let editIndex = -1;
 const searchValue = document.getElementById('searchValue');
 function render(val) {
     let newContent = ''
@@ -48,9 +49,9 @@ function handleDelete(id) {
     localStorage.setItem('data', myArrayJson);
 }
 
-let editIndex = -1;
 function edit(id) {
     const index = data.find(el => el.id === +id)
+    console.log(index);
     const name = index.name
     const email = index.email
     const phone = index.phone
@@ -93,6 +94,7 @@ function submit() {
         validate(newValue)
     }
     editIndex = -1;
+    document.getElementById('isCheckButton').innerHTML = 'add'
 }
 function validate(params) {
     console.log(editIndex);
